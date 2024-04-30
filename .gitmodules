@@ -2,6 +2,3 @@
 	path = www/themes/congo
 	url = https://github.com/jpanther/congo.git
 	branch = stable
-[submodule "themes/port-hugo"]
-	path = themes/port-hugo
-	url = https://github.com/tylerjlawson/port-hugo.git
