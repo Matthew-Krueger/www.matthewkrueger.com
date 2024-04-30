@@ -1,3 +1,13 @@
-baseURL = 'http://www.matthewkrueger.com/'
+baseURL = 'https://www.matthewkrueger.com/'
 languageCode = 'en-us'
 title = 'Matthew Krueger'
+
+theme = "port-hugo"
+defaultContentLanguage = "en"
+
+enableRobotsTXT = true
+paginate = 10
+summaryLength = 0
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
