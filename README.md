@@ -3,6 +3,9 @@
 ## About
 This is the underlying hugo code for www.matthewkrueger.com
 
+## Requirements
+This requires GIT-LFS due to the fact that I am storing files in here.
+
 ## License
 www.matthewkrueger.com - Matthew Krueger's Personal Website
 Copyright (C) 2024  Matthew Krueger <contact@matthewkrueger.com>
