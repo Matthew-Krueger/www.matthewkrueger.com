@@ -16,7 +16,7 @@ emoji = "📓"
 src = "img/avatar.jpeg"
 
 [Params.Footer]
-customText = "Licensed under GPL, uses open source software. See <a href=\"https://gitlab.com/mckrueg/www.matthewkrueger.com\">GitLab</a> for more."
+customText = "Licensed under GPL, using entirely Free Software (sans hosting). See <a href=\"https://gitlab.com/mckrueg/www.matthewkrueger.com\">GitLab</a> for more."
 
 [menu]
 [[menu.social]]
