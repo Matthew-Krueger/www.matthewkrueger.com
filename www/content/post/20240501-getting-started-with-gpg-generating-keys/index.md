@@ -331,5 +331,5 @@ offloading these keys to physical security keys later, as well as talk about
 how to actually use the keys to do cool things like encrypting and decrypting
 messages. We'll also upload our key to a keyserver.
 
-> While human written and reviewed, portions of this were
-generated using Generative AI.
+> While human written and reviewed, parts of this article were written with the
+assistance of Generative AI tools.
