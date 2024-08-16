@@ -9,7 +9,7 @@ path = "github.com/CaiJimmy/hugo-theme-stack/v3"
 
 
 [Params.Sidebar]
-subtitle = "Emerging Computer Science Professional | Entrepreneur | Guided by Faith"
+subtitle = "Emerging Computer Science Professional | Most code hosted on GitLab because it is open source"
 emoji = "📓"
 
 [Params.Sidebar.avatar]
