@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>AI on Matthew Krueger</title>
+        <link>https://www.matthewkrueger.com/categories/ai/</link>
+        <description>Recent content in AI on Matthew Krueger</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Thu, 15 Aug 2024 10:40:00 -0400</lastBuildDate><atom:link href="https://www.matthewkrueger.com/categories/ai/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Introduction to Rust as an AI Tool</title>
+        <link>https://www.matthewkrueger.com/post/20240430-first-post/</link>
+        <pubDate>Thu, 15 Aug 2024 10:40:00 -0400</pubDate>
+        
+        <guid>https://www.matthewkrueger.com/post/20240430-first-post/</guid>
+        <description>&lt;img src="https://www.matthewkrueger.com/post/20240430-first-post/cover.jpg" alt="Featured image of post Introduction to Rust as an AI Tool" /&gt;&lt;h2 id=&#34;first-post&#34;&gt;
+    &lt;a href=&#34;#first-post&#34;&gt;#&lt;/a&gt;
+    First post
+&lt;/h2&gt;&lt;p&gt;Hello all, I&amp;rsquo;m Matthew Krueger, a student at BGSU studying computer science.
+I&amp;rsquo;m attempting to learn how to use HUGO to build my website, and this is my
+first post to the site. I&amp;rsquo;m always excited to learn. On this website, I plan
+to make portfolio posts, as well as host an online copy of my resume.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m also dyslexic, so please keep that in mind if you see any spelling mistakes.&lt;/p&gt;
+&lt;p&gt;Thanks! fasdf&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Photo by &lt;a class=&#34;link&#34; href=&#34;https://x.com/i/grok&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;xAI via Grok&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on Matthew Krueger</title>
+        <link>https://www.matthewkrueger.com/categories/</link>
+        <description>Recent content in Categories on Matthew Krueger</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Wed, 01 May 2024 02:17:00 +0000</lastBuildDate><atom:link href="https://www.matthewkrueger.com/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Portfolio</title>
+        <link>https://www.matthewkrueger.com/categories/portfolio/</link>
+        <pubDate>Wed, 01 May 2024 02:17:00 +0000</pubDate>
+        
+        <guid>https://www.matthewkrueger.com/categories/portfolio/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Security and Encryption</title>
+        <link>https://www.matthewkrueger.com/categories/security-and-encryption/</link>
+        <pubDate>Wed, 01 May 2024 02:17:00 +0000</pubDate>
+        
+        <guid>https://www.matthewkrueger.com/categories/security-and-encryption/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>General</title>
+        <link>https://www.matthewkrueger.com/categories/general/</link>
+        <pubDate>Tue, 30 Apr 2024 03:08:59 +0000</pubDate>
+        
+        <guid>https://www.matthewkrueger.com/categories/general/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>
