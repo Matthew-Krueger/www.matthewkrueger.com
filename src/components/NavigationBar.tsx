@@ -10,7 +10,7 @@ const Navbar: React.FC = () => {
 
     return (<>
         <nav className={cn(
-            "fixed top-4 left-1/2 transform -translate-x-1/2 flex flex-col max-w-[1240px] w-[90%] px-4 rounded-3xl shadow-lg text-slate-900 dark:text-slate-100 bg-slate-100 dark:bg-slate-900 overflow-hidden",
+            "fixed top-4 left-1/2 transform -translate-x-1/2 flex flex-col max-w-[1240px] w-[90%] px-4 rounded-3xl shadow-lg text-slate-900 dark:text-slate-100 bg-slate-50 dark:bg-slate-950 overflow-hidden",
             hamburgerOpen ? "min-h-[200px]" : "h-16"
         )}>
             <div className="flex justify-between items-center w-full h-16">

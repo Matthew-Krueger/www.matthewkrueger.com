@@ -1,5 +1,7 @@
 import {Footer} from "@/components/Footer";
 import Navbar from "@/components/NavigationBar";
+import Link from "next/link";
+import {Button} from "@/components/ui/button";
 
 export default function Home() {
     return (
@@ -14,7 +16,7 @@ export default function Home() {
                     <span className="hidden sm:inline-block mx-2">|</span>
                     <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
                 </div>
-                <p className="text-xl">Redesigned website coming soon!</p>
+                <Link href="/about" className="mt-6"><Button size="lg">About me!</Button></Link>
             </main>
             <Footer/>
         </div>

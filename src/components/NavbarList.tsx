@@ -38,7 +38,7 @@ const NavbarList = React.memo(({ isMobile, open }: { isMobile: boolean; open?: b
                     <li
                         className={cn(
                             // Common styles for all states
-                            "cursor-pointer p-2 my-2 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100",
+                            "cursor-pointer p-2 py-1 my-2 hover:bg-slate-200 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100",
 
                             // Device-specific styles
                             isMobile

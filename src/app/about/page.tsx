@@ -3,166 +3,167 @@ import Navbar from "@/components/NavigationBar";
 import {Footer} from "@/components/Footer";
 import {Dependency} from "@/lib/types";
 import DependencyItem from "@/components/DependencyItem";
+import StaticSection from "@/components/StaticSection";
 
 const hosting: Dependency[] = [
     {
-        heading: "Hosted by",
-        name: "Vercel",
-        url: "https://vercel.com"
+        name: <span>Vercel</span>,
+        url: "https://vercel.com",
+        heading: <span>Hosted by</span>
     },
     {
-        heading: "Secure Email by",
-        name: "ProtonMail",
-        url: "https://protonmail.com"
+        name: <span>ProtonMail</span>,
+        url: "https://protonmail.com",
+        heading: <span>Secure Email by</span>
     },
     {
-        heading: "Proudly Served by<br>&amp;<br>Developed with",
-        name: "Bun.sh",
-        url: "https://bun.sh"
+        name: <span>Bun.sh</span>,
+        url: "https://bun.sh",
+        heading: <span>Proudly Served by<br />&<br />Developed with</span>
     }
 ];
 
 const dependencies: Dependency[] = [
     {
-        name: "@radix-ui/react-dropdown-menu",
+        name: <span>@radix-ui/react-dropdown-menu</span>,
         url: "https://www.npmjs.com/package/@radix-ui/react-dropdown-menu",
-        version: "^2.1.6",
-        license: "MIT"
+        version: <span>^2.1.6</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "@radix-ui/react-slot",
+        name: <span>@radix-ui/react-slot</span>,
         url: "https://www.npmjs.com/package/@radix-ui/react-slot",
-        version: "^1.1.2",
-        license: "MIT"
+        version: <span>^1.1.2</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "@radix-ui/react-tabs",
+        name: <span>@radix-ui/react-tabs</span>,
         url: "https://www.npmjs.com/package/@radix-ui/react-tabs",
-        version: "^1.1.3",
-        license: "MIT"
+        version: <span>^1.1.3</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "class-variance-authority",
+        name: <span>class-variance-authority</span>,
         url: "https://www.npmjs.com/package/class-variance-authority",
-        version: "^0.7.1",
-        license: "Apache 2.0"
+        version: <span>^0.7.1</span>,
+        license: <span>Apache 2.0</span>
     },
     {
-        name: "clsx",
+        name: <span>clsx</span>,
         url: "https://www.npmjs.com/package/clsx",
-        version: "^2.1.1",
-        license: "MIT"
+        version: <span>^2.1.1</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "lucide-react",
+        name: <span>lucide-react</span>,
         url: "https://www.npmjs.com/package/lucide-react",
-        version: "^0.475.0",
-        license: "ISC"
+        version: <span>^0.475.0</span>,
+        license: <span>ISC</span>
     },
     {
-        name: "next",
+        name: <span>next</span>,
         url: "https://www.npmjs.com/package/next",
-        version: "15.1.7",
-        license: "MIT"
+        version: <span>15.1.7</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "next-themes",
+        name: <span>next-themes</span>,
         url: "https://www.npmjs.com/package/next-themes",
-        version: "^0.4.4",
-        license: "MIT"
+        version: <span>^0.4.4</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "react",
+        name: <span>react</span>,
         url: "https://www.npmjs.com/package/react",
-        version: "^19.0.0",
-        license: "MIT"
+        version: <span>^19.0.0</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "react-dom",
+        name: <span>react-dom</span>,
         url: "https://www.npmjs.com/package/react-dom",
-        version: "^19.0.0",
-        license: "MIT"
+        version: <span>^19.0.0</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "react-icons",
+        name: <span>react-icons</span>,
         url: "https://www.npmjs.com/package/react-icons",
-        version: "^5.4.0",
-        license: "MIT"
+        version: <span>^5.4.0</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "tailwind-merge",
+        name: <span>tailwind-merge</span>,
         url: "https://www.npmjs.com/package/tailwind-merge",
-        version: "^3.0.1",
-        license: "MIT"
+        version: <span>^3.0.1</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "tailwindcss-animate",
+        name: <span>tailwindcss-animate</span>,
         url: "https://www.npmjs.com/package/tailwindcss-animate",
-        version: "^1.0.7",
-        license: "MIT"
+        version: <span>^1.0.7</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "bun",
+        name: <span>bun</span>,
         url: "https://bun.sh",
-        version: "latest",  // Bun doesn't specify version in npm, using 'latest' as a placeholder
-        license: "MIT"
+        version: <span>latest</span>,
+        license: <span>MIT</span>
     }
 ];
 
 const devDependencies: Dependency[] = [
     {
-        name: "@eslint/eslintrc",
+        name: <span>@eslint/eslintrc</span>,
         url: "https://www.npmjs.com/package/@eslint/eslintrc",
-        version: "^3",
-        license: "MIT"
+        version: <span>^3</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "@types/node",
+        name: <span>@types/node</span>,
         url: "https://www.npmjs.com/package/@types/node",
-        version: "^20",
-        license: "MIT"
+        version: <span>^20</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "@types/react",
+        name: <span>@types/react</span>,
         url: "https://www.npmjs.com/package/@types/react",
-        version: "^19",
-        license: "MIT"
+        version: <span>^19</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "@types/react-dom",
+        name: <span>@types/react-dom</span>,
         url: "https://www.npmjs.com/package/@types/react-dom",
-        version: "^19",
-        license: "MIT"
+        version: <span>^19</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "eslint",
+        name: <span>eslint</span>,
         url: "https://www.npmjs.com/package/eslint",
-        version: "^9",
-        license: "MIT"
+        version: <span>^9</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "eslint-config-next",
+        name: <span>eslint-config-next</span>,
         url: "https://www.npmjs.com/package/eslint-config-next",
-        version: "15.1.7",
-        license: "MIT"
+        version: <span>15.1.7</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "postcss",
+        name: <span>postcss</span>,
         url: "https://www.npmjs.com/package/postcss",
-        version: "^8",
-        license: "MIT"
+        version: <span>^8</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "tailwindcss",
+        name: <span>tailwindcss</span>,
         url: "https://www.npmjs.com/package/tailwindcss",
-        version: "^3.4.17",
-        license: "MIT"
+        version: <span>^3.4.17</span>,
+        license: <span>MIT</span>
     },
     {
-        name: "typescript",
+        name: <span>typescript</span>,
         url: "https://www.npmjs.com/package/typescript",
-        version: "^5",
-        license: "Apache 2.0"
+        version: <span>^5</span>,
+        license: <span>Apache 2.0</span>
     }
 ];
 
@@ -171,41 +172,41 @@ const About = () => {
         <div className="motion-background flex flex-col min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] text-slate-950 dark:text-slate-50">
             <Navbar/>
             <main className="flex-grow flex flex-col items-center justify-center mt-12">
-                <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
-                <div className="flex flex-col sm:flex-row items-center">
-                    <h3 className="text-lg text-center sm:text-left">Emerging Computer Science Professional</h3>
-                    <span className="hidden sm:inline-block mx-2">|</span>
-                    <h3 className="text-lg text-center sm:text-left">React & Typescript Dev</h3>
-                    <span className="hidden sm:inline-block mx-2">|</span>
-                    <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
-                </div>
 
-                <section className="mt-8 bg-slate-50 text-slate-950 dark:bg-slate-950 dark:text-slate-50 p-6 rounded-3xl">
+                <StaticSection>
+                    <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
+                    <div className="flex flex-col sm:flex-row items-center">
+                        <h3 className="text-lg text-center sm:text-left">Emerging Computer Science Professional</h3>
+                        <span className="hidden sm:inline-block mx-2">|</span>
+                        <h3 className="text-lg text-center sm:text-left">React & Typescript Dev</h3>
+                        <span className="hidden sm:inline-block mx-2">|</span>
+                        <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
+                    </div>
+                </StaticSection>
+
+
+                <StaticSection>
                     <h2 className="text-3xl font-bold text-center">Tech Stack</h2>
                     <h3 className="text-2xl font-bold mt-8 text-center">Hosting</h3>
-                    <div className="mt-8 flex flex-wrap justify-center gap-4">
-                        {hosting.map((dependency) => (
-                            <DependencyItem key={dependency.name + dependency.version} {...dependency}/>
-                        ))}
-                    </div>
-
+                        <DependencyList dependencies={hosting}/>
                     <h3 className="text-2xl font-bold mt-8 text-center">Dependencies</h3>
-                    <div className="mt-8 flex flex-wrap justify-center gap-4">
-                        {dependencies.map((dependency) => (
-                            <DependencyItem key={dependency.name + dependency.version} {...dependency}/>
-                        ))}
-                    </div>
+                        <DependencyList dependencies={dependencies}/>
                     <h2 className="text-2xl font-bold mt-8 text-center">Development Dependencies</h2>
-                    <div className="mt-8 flex flex-wrap justify-center gap-4">
-                        {devDependencies.map((dependency) => (
-                            <DependencyItem key={dependency.name + dependency.version} {...dependency}/>
-                        ))}
-                    </div>
-                </section>
+                        <DependencyList dependencies={devDependencies}/>
+                </StaticSection>
             </main>
             <Footer/>
         </div>
     );
 };
+
+const DependencyList = React.memo(({dependencies}: { dependencies: Dependency[] }) => (
+    <div className="mt-8 flex flex-wrap justify-center gap-4">
+        {dependencies.map((dependency) => (
+            <DependencyItem key={dependency.url} {...dependency}/>
+        ))}
+    </div>
+))
+DependencyList.displayName = "DependencyList";
 
 export default About;

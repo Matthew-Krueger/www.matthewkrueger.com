@@ -7,9 +7,9 @@ export type NavItem = {
 };
 
 export type Dependency = {
-    name: string,
+    name: React.ReactElement,
     url: string,
-    heading?: string,
-    version?:string,
-    license?: string
+    heading?: React.ReactElement,
+    version?:React.ReactElement,
+    license?: React.ReactElement
 };
