@@ -14,6 +14,7 @@ export default function Home() {
                     <span className="hidden sm:inline-block mx-2">|</span>
                     <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
                 </div>
+                <p className="text-xl">Redesigned website coming soon!</p>
             </main>
             <Footer/>
         </div>
