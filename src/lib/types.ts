@@ -5,3 +5,11 @@ export type NavItem = {
     link: string,
     key: string
 };
+
+export type Dependency = {
+    name: string,
+    url: string,
+    heading?: string,
+    version?:string,
+    license?: string
+};
