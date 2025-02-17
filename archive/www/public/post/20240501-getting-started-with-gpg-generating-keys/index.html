@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="Exploration into the GPG platform and how to use it">
+<title>Getting Started With GPG - Generating Keys</title>
+
+<link rel='canonical' href='https://www.matthewkrueger.com/post/20240501-getting-started-with-gpg-generating-keys/'>
+
+<link rel="stylesheet" href="/scss/style.min.8e60baf4cd3fc55968717a6e39762f4d28ed7ef6007566b6c7970ad0fe907198.css"><meta property='og:title' content="Getting Started With GPG - Generating Keys">
+<meta property='og:description' content="Exploration into the GPG platform and how to use it">
+<meta property='og:url' content='https://www.matthewkrueger.com/post/20240501-getting-started-with-gpg-generating-keys/'>
+<meta property='og:site_name' content='Matthew Krueger'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2024-05-01T02:17:00&#43;00:00'/><meta property='article:modified_time' content='2024-05-01T02:17:00&#43;00:00'/>
+<meta name="twitter:title" content="Getting Started With GPG - Generating Keys">
+<meta name="twitter:description" content="Exploration into the GPG platform and how to use it">
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column compact"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="Toggle Menu">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_5139e58754c6b92b.jpeg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">📓</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">Matthew Krueger</a></h1>
+            <h2 class="site-description">Emerging Computer Science Professional | Most code hosted on GitLab because it is open source</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://www.x.com/mckrueg'
+                        target="_blank"
+                        title="X"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-twitter"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c0 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.gitlab.com/mckrueg'
+                        target="_blank"
+                        title="GitLab"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-gitlab"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M21 14l-9 7l-9 -7l3 -11l3 7h6l3 -7z" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://www.github.com/Matthew-Krueger'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-github"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='mailto:contact@matthewkrueger.com'
+                        target="_blank"
+                        title="Email"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon icon-tabler icons-tabler-outline icon-tabler-mailbox"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M10 21v-6.5a3.5 3.5 0 0 0 -7 0v6.5h18v-6a4 4 0 0 0 -4 -4h-10.5" />
+  <path d="M12 11v-8h4l2 2l-2 2h-4" />
+  <path d="M6 15h1" />
+</svg>
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/page/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>Dark Mode</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/portfolio/" >
+                Portfolio
+            </a>
+        
+            <a href="/categories/security-and-encryption/" >
+                Security and Encryption
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/20240501-getting-started-with-gpg-generating-keys/">Getting Started With GPG - Generating Keys</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            Exploration into the GPG platform and how to use it
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">May 01, 2024</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    11 minute read
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>In an increasingly online world, we&rsquo;ve become accustomed to being able to
+download anything from anywhere. Usually, we never think twice about where that
+download is coming from or who is on the other side, or even worse, who might
+be listening in or changing things in flight. Sometimes that doesn&rsquo;t really
+matter. Like this site. There&rsquo;s no dynamic content in this site and it&rsquo;s built
+using HUGO. Nothing can really change (unless your government or ISP is
+censoring this site). But sometimes it really matters. You <em>need</em>
+to make sure you&rsquo;re going to your bank&rsquo;s website. You <em>need</em> to make sure
+that you&rsquo;re putting your password in the real amazon.com. With the web, we use
+SSL for this. It&rsquo;s the padlock in the upper right hand corner of your browser
+that says &ldquo;Connection Secured&rdquo; whenever you go anywhere these days. But how do
+we secure files and make sure they were put there by someone we trust?</p>
+<p>GPG (The GNU Privacy Guard) is a software that lets us do this. It&rsquo;s based on a
+&ldquo;web of trust&rdquo; that helps to ensure that no broken, compromised, or otherwise
+expired keys should ever break the trust of any other keys. That&rsquo;s a fancy way
+of saying that it is decentralized. There&rsquo;s a lot of buzz about that right now!
+With GPG, people generate their own Master Certifying Key, from which they can
+create various sub keys to encrypt, authenticate, or sign files and messages.
+The certifying key is used to sign other keys as well, which says that they
+are trusted. So, if I have a friend, Bob, and we sign each other&rsquo;s keys, we are
+saying to the whole web of trust that anything that Bob trusts, I trust,
+and anything that I trust, Bob trusts. This is transitive. So if Bob also
+trusts Sam the same way that I trust Bob, then I will as well. However, there&rsquo;s
+some additional protections, where this relationship is weaker, and will
+require multiple indirect relationships to be trusted, so no one link in the
+chain will affect all others.</p>
+<p>That was a lot of talk about keys, but not a lot about encryption, which is
+the meat and potatoes of GPG. Keys give us the ability to encrypt, sign, and
+authenticate. So let&rsquo;s get started.</p>
+<hr>
+<h1 id="generating-a-master-certifying-key">
+    <a href="#generating-a-master-certifying-key">#</a>
+    Generating a Master Certifying Key
+</h1><ol>
+<li>First, we have to generate our new keys. This is best done on an
+air-gapped computer that will never touch the internet again. However, this is
+<em>not</em> necessary to use GPG, it just keeps your master key much more Secure
+by removing the opportunity for a data leak. Use the command
+<code>gpg --expert --full-generate-key</code> to generate a new key. You&rsquo;ll get a prompt asking you to select a key type. Select option 8 to generate an RSA key. (there are other options, but they&rsquo;re not as widely in use right now).</li>
+</ol>
+<pre tabindex="0"><code>gpg (GnuPG) 2.4.5; Copyright (C) 2024 g10 Code GmbH
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Please select what kind of key you want:
+   (1) RSA and RSA
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+   (9) ECC (sign and encrypt) *default*
+  (10) ECC (sign only)
+  (11) ECC (set your own capabilities)
+  (13) Existing key
+  (14) Existing key from card
+Your selection?
+</code></pre><ol start="2">
+<li>Next, the program is going to ask us
+what capabilities we want for our key. We want to toggle everything off except
+for <code>Certify</code>, and type q when finished.</li>
+</ol>
+<pre tabindex="0"><code>Possible actions for this RSA key: Sign Certify Encrypt Authenticate
+Current allowed actions: Sign Certify Encrypt
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+</code></pre><ol start="3">
+<li>Next, we have to set our key length. It&rsquo;s wise to make our key as long as
+possible so we can be prepared for the future, but it can make encryption
+slower. It depends on the key type. In my case, the longest is 4096, so I&rsquo;ll
+select that.</li>
+</ol>
+<pre tabindex="0"><code>RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+</code></pre><ol start="4">
+<li>Next, we need to select when the key is set to expire. I chose &ldquo;never&rdquo;
+because I keep my key secret and air-gapped. If you don&rsquo;t keep your key
+air-gapped, I&rsquo;d advise you set some expiry date a few years in the future so
+in case it gets compromised, the damage that could be done is minimal. It will ask to confirm, and you&rsquo;ll have to confirm your choices.</li>
+</ol>
+<pre tabindex="0"><code>Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      &lt;n&gt;  = key expires in n days
+      &lt;n&gt;w = key expires in n weeks
+      &lt;n&gt;m = key expires in n months
+      &lt;n&gt;y = key expires in n years
+Key is valid for? (0)
+
+Key does not expire at all
+Is this correct? (y/N)
+</code></pre><ol start="5">
+<li>Next, we&rsquo;ll have to give it our real information. Anonymity is not really
+an option here unless you have a pseudonym. I don&rsquo;t, so I&rsquo;m using my real name
+and a test email from my domain. Again, you&rsquo;ll be asked to confirm.</li>
+</ol>
+<pre tabindex="0"><code>
+GnuPG needs to construct a user ID to identify your key.
+
+Real name: Matthew Krueger
+Email address: example@matthewkrueger.com
+Comment: Matthew&#39;s Example Master Certifying Key for Website
+You selected this USER-ID:
+    &#34;Matthew Krueger (Matthew&#39;s Example Master Certifying Key for Website) &lt;example@matthewkrueger.com&gt;&#34;
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
+</code></pre><ol start="6">
+<li>
+<p>We&rsquo;ll now be asked to enter a password for our master key. This is VITALLY
+important if you&rsquo;re not keeping your key air-gapped, as this will encrypt
+your key when not in use. Since this is a demo, I&rsquo;m not going to enter
+anything here. Every OS and implementation of GPG will be different, so follow
+the prompts it gives you. Once again, I&rsquo;d like to emphasize the VITAL
+importance of choosing a unique, complex, and random password for your key. I
+keep mine written down on a physical piece of paper that never touched a copy
+machine (they spy on you), and I sent copies to my family across the state.
+While that&rsquo;s a bit extreme, similar concepts are still good to follow,
+especially offsite backups. You don&rsquo;t want to lose your key. Ever.</p>
+</li>
+<li>
+<p>Lastly, GPG will generate our key and give us some information. The line
+pub contains a number, <code>64CFA56B02F7B2E484B09BE29F9F051089326E60</code>. That is
+our key ID. This is how we identify keys. We&rsquo;re now ready to generate some sub
+keys that we can actually use.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>We need to generate a lot of random bytes. It is a good idea to perform
+some other action (type on the keyboard, move the mouse, utilize the
+disks) during the prime generation; this gives the random number
+generator a better chance to gain enough entropy.
+gpg: WARNING: server &#39;keyboxd&#39; is older than us (2.4.3 &lt; 2.4.5)
+gpg: Note: Outdated servers may lack important security fixes.
+gpg: Note: Use the command &#34;gpgconf --kill all&#34; to restart them.
+gpg: WARNING: server &#39;keyboxd&#39; is older than us (2.4.3 &lt; 2.4.5)
+gpg: Note: Outdated servers may lack important security fixes.
+gpg: Note: Use the command &#34;gpgconf --kill all&#34; to restart them.
+gpg: directory &#39;/Users/mkrueger/.gnupg/openpgp-revocs.d&#39; created
+gpg: revocation certificate stored as &#39;/Users/mkrueger/.gnupg/openpgp-revocs.d/64CFA56B02F7B2E484B09BE29F9F051089326E60.rev&#39;
+public and secret key created and signed.
+
+pub   rsa4096 2024-05-01 [C]
+      64CFA56B02F7B2E484B09BE29F9F051089326E60
+uid                      Matthew Krueger (Matthew&#39;s Example Master Certifying Key for Website) &lt;example@matthewkrueger.com&gt;
+</code></pre><ol start="8">
+<li>We can confirm our key is generated by checking our keyring. We do this by
+using the command <code>gpg --list-keys</code>. Here&rsquo;s my keyring. If you notice, we&rsquo;re
+missing a few things. Our key we just generated only has a C. But my real key
+has three keys label <code>sub</code> below, that each have an expiry date, as well as
+an S, E, and A. We&rsquo;ll explore these sub-keys next.</li>
+</ol>
+<pre tabindex="0"><code>pub   rsa4096 2024-05-01 [C]
+      64CFA56B02F7B2E484B09BE29F9F051089326E60
+uid           [ultimate] Matthew Krueger (Matthew&#39;s Example Master Certifying Key for Website) &lt;example@matthewkrueger.com&gt;
+
+pub   rsa4096 2024-01-05 [C]
+      E7444039BF585550BD8AA0F504A3D43F84760AC0
+uid           [ultimate] Matthew Krueger (Matthew&#39;s Master Certifying Key) &lt;contact@matthewkrueger.com&gt;
+sub   rsa4096 2024-01-05 [S] [expires: 2027-01-04]
+sub   rsa4096 2024-01-05 [E] [expires: 2027-01-04]
+sub   rsa4096 2024-01-05 [A] [expires: 2027-01-04]
+</code></pre><hr>
+<h1 id="generating-subkeys">
+    <a href="#generating-subkeys">#</a>
+    Generating Subkeys
+</h1><ol>
+<li>
+<p>First, we&rsquo;ll get our list of keys again. Use <code>gpg --list-keys</code> for this.
+Since we&rsquo;re working on our example key, I&rsquo;ll use my first selection,
+<code>64CFA56B02F7B2E484B09BE29F9F051089326E60</code>. We can also use the last 16
+digits of this key for short this is called the keyID. (There&rsquo;s also a short
+keyID that&rsquo;s the last 8 digits)</p>
+</li>
+<li>
+<p>Next, we&rsquo;ll use the fingerprint to edit our key. You&rsquo;ll need your Master
+key password at this point. Enter it when it prompts you. At this point,
+we&rsquo;ll be in a terminal for GPG. We can ask it for help with <code>help</code>!
+<code>gpg --expert --edit-key &lt;your key&gt;</code> is the command we need for this
+operation.</p>
+</li>
+</ol>
+<pre tabindex="0"><code>sec  rsa4096/9F9F051089326E60
+     created: 2024-05-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+[ultimate] (1). Matthew Krueger (Matthew&#39;s Example Master Certifying Key for Website) &lt;example@matthewkrueger.com&gt;
+
+gpg&gt; help
+
+gpg&gt; help
+quit        quit this menu
+save        save and quit
+help        show this help
+fpr         show key fingerprint
+grip        show the keygrip
+list        list key and user IDs
+uid         select user ID N
+key         select subkey N
+check       check signatures
+sign        sign selected user IDs [* see below for related commands]
+lsign       sign selected user IDs locally
+tsign       sign selected user IDs with a trust signature
+nrsign      sign selected user IDs with a non-revocable signature
+adduid      add a user ID
+addphoto    add a photo ID
+deluid      delete selected user IDs
+addkey      add a subkey
+addcardkey  add a key to a smartcard
+keytocard   move a key to a smartcard
+keytotpm    convert a key to TPM form using the local TPM
+bkuptocard  move a backup key to a smartcard
+delkey      delete selected subkeys
+addrevoker  add a revocation key
+addadsk     add an additional decryption subkey
+delsig      delete signatures from the selected user IDs
+expire      change the expiration date for the key or selected subkeys
+primary     flag the selected user ID as primary
+pref        list preferences (expert)
+showpref    list preferences (verbose)
+setpref     set preference list for the selected user IDs
+keyserver   set the preferred keyserver URL for the selected user IDs
+notation    set a notation for the selected user IDs
+passwd      change the passphrase
+trust       change the ownertrust
+revsig      revoke signatures on the selected user IDs
+revuid      revoke selected user IDs
+revkey      revoke key or selected subkeys
+enable      enable key
+disable     disable key
+showphoto   show selected photo IDs
+clean       compact unusable user IDs and remove unusable signatures from key
+minimize    compact unusable user IDs and remove all signatures from key
+
+* The &#39;sign&#39; command may be prefixed with an &#39;l&#39; for local signatures (lsign),
+  a &#39;t&#39; for trust signatures (tsign), an &#39;nr&#39; for non-revocable signatures
+  (nrsign), or any combination thereof (ltsign, tnrsign, etc.).
+
+gpg&gt;
+</code></pre><ol start="3">
+<li>Now, that&rsquo;s a lot of stuff. But what we&rsquo;re mainly interested in is adding
+a subkey to this. If we check the help page, this is under the <code>addkey</code>
+command. Type that in, and then enter option 8 for an RSA subkey.
+This should look pretty similar, as we&rsquo;re just repeating the process of
+generating a new key, and we&rsquo;ll follow the same exact steps.</li>
+</ol>
+<pre tabindex="0"><code>gpg&gt; addkey
+Please select what kind of key you want:
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+   (5) Elgamal (encrypt only)
+   (6) RSA (encrypt only)
+   (7) DSA (set your own capabilities)
+   (8) RSA (set your own capabilities)
+  (10) ECC (sign only)
+  (11) ECC (set your own capabilities)
+  (12) ECC (encrypt only)
+  (13) Existing key
+  (14) Existing key from card
+Your selection?
+</code></pre><ol start="4">
+<li>Follow the steps as above, toggling everything off but <code>sign</code>. You&rsquo;ll
+notice the option for <code>certify</code> isn&rsquo;t here. Only Master keys can certify.
+We&rsquo;ll also want 4096 bit security. Expiry wise, these are more likely to be
+useful expiring after a year or so. I have mine set to expire after 3 years
+since I keep my keys on a FIPS hardware security key (something I&rsquo;ll cover in
+a later post). I&rsquo;d advise around a year. Make sure to set a password for this
+key as well. This is VITALLY important just as with the main key. Since this
+is a demo key, I am not going to be adding one here.</li>
+</ol>
+<pre tabindex="0"><code>
+Possible actions for this RSA key: Sign Encrypt Authenticate
+Current allowed actions: Sign
+
+   (S) Toggle the sign capability
+   (E) Toggle the encrypt capability
+   (A) Toggle the authenticate capability
+   (Q) Finished
+
+Your selection?
+
+RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (3072) 4096
+Requested keysize is 4096 bits
+Please specify how long the key should be valid.
+         0 = key does not expire
+      &lt;n&gt;  = key expires in n days
+      &lt;n&gt;w = key expires in n weeks
+      &lt;n&gt;m = key expires in n months
+      &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 1y
+Key expires at Thu May  1 02:04:32 2025 EDT
+Is this correct? (y/N) y
+Really create? (y/N) y
+</code></pre><ol start="5">
+<li>Repeat this process, toggling everything but <code>encrypt</code> on the second key,
+and everything but <code>Authenticate</code> on the third. After this is complete, you
+should see an output that looks like below. Type <code>save</code> to save the keys.</li>
+</ol>
+<pre tabindex="0"><code>sec  rsa4096/9F9F051089326E60
+     created: 2024-05-01  expires: never       usage: C   
+     trust: ultimate      validity: ultimate
+ssb  rsa4096/8D65232E2D447C4A
+     created: 2024-05-01  expires: 2025-05-01  usage: SR  
+ssb  rsa4096/F77E8401DB3453FB
+     created: 2024-05-01  expires: 2025-05-01  usage: ER  
+ssb  rsa4096/A63FDD38204FB63E
+     created: 2024-05-01  expires: 2025-05-01  usage: AR  
+[ultimate] (1). Matthew Krueger (Matthew&#39;s Example Master Certifying Key for Website) &lt;example@matthewkrueger.com&gt;
+</code></pre><ol start="6">
+<li>Now we&rsquo;re done! We have GPG keys in our keyring. We&rsquo;ll talk about
+offloading these keys to physical security keys later, as well as talk about
+how to actually use the keys to do cool things like encrypting and decrypting
+messages. We&rsquo;ll also upload our key to a keyserver.</li>
+</ol>
+<blockquote>
+<p>While human written and reviewed, parts of this article were written with the
+assistance of Generative AI tools.</p></blockquote>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    <section class="article-lastmod">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <span>
+            Last updated on May 01, 2024 02:17 UTC
+        </span>
+    </section></footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2025 Matthew Krueger
+    </section>
+    
+    <section class="powerby">
+        
+            Licensed under GPL, using entirely Free Software (sans hosting). See <a href="https://gitlab.com/mckrueg/www.matthewkrueger.com">GitLab</a> for more. <br/>
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.25.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

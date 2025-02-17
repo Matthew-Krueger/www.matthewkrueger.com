@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+}
+
+@layer utilities {
+  .motion-background {
+    background-image: linear-gradient(to right,
+    theme('colors.slate.100'),
+    theme('colors.slate.300'),
+    theme('colors.violet.200'),
+    theme('colors.blue.200'),
+    theme('colors.slate.100'),
+    theme('colors.slate.300'),
+    theme('colors.violet.200'),
+    theme('colors.blue.200'),
+    theme('colors.slate.100')
+    );
+    background-size: 5000% 100%; /* Very long gradient for seamless looping */
+    animation: loopGradient 60s linear infinite;
+  }
+  .dark .motion-background {
+    background-image: linear-gradient(to right,
+      theme('colors.slate.950'),
+      theme('colors.slate.900'),
+      theme('colors.violet.950'),
+      theme('colors.blue.950'),
+      theme('colors.slate.950'),
+      theme('colors.slate.900'),
+      theme('colors.violet.950'),
+      theme('colors.blue.950'),
+      theme('colors.slate.950')
+    );
+    background-size: 5000% 1000%;
+    animation: loopGradient 60s linear infinite;
+  }
+  @keyframes loopGradient {
+    0% {
+      background-position: 0 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+}

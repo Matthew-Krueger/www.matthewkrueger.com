@@ -1,38 +1,36 @@
-# www.matthewkrueger.com
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## About
-This is the underlying hugo code for www.matthewkrueger.com
+## Getting Started
 
-## Requirements
-This requires GIT-LFS due to the fact that I am storing files in here.
+First, run the development server:
 
-## Published vs Non-Published articles
-Published articles will not have the draft in the frontmatter. Draft articles
-will have `draft: true` in the front matter as this suppresses the generation of
-their hugo page. These articles may or may not be committed to the repository
-and draft articles are not guaranteed to be published.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Free Software Used
- - Debian 12 Software Stack (various licenses)
- - Nginx (BSD 2 Clause)
- - OpenSSL (Apache 2.0)
- - CertBot (Apache 2.0)
- - Hugo (Apache 2.0)
- - hugo-theme-stack (GPL)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## License
-www.matthewkrueger.com - Matthew Krueger's Personal Website
-Copyright (C) 2024  Matthew Krueger <contact@matthewkrueger.com>
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+## Learn More
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
