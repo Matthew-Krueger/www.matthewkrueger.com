@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bunx next dev --turbopack",
-    "build": "bunx next build",
-    "start": "bunx next start",
-    "lint": "bunx next lint"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.6",
