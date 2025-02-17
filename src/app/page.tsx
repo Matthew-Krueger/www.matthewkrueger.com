@@ -1,12 +1,27 @@
-import Image from "next/image";
 import {Footer} from "@/components/Footer";
 import Navbar from "@/components/NavigationBar";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <Navbar/>
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    return (
+        <div className="motion-background flex flex-col min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+            <Navbar/>
+            <main className="flex-grow flex flex-col items-center justify-center mt-12">
+                <h1 className="text-4xl font-bold mb-4 text-center">Matthew Krueger</h1>
+                <div className="flex flex-col sm:flex-row items-center">
+                    <h3 className="text-lg text-center sm:text-left">Emerging Computer Science Professional</h3>
+                    <span className="hidden sm:inline-block mx-2">|</span>
+                    <h3 className="text-lg text-center sm:text-left">React & Typescript Dev</h3>
+                    <span className="hidden sm:inline-block mx-2">|</span>
+                    <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
+                </div>
+            </main>
+            <Footer/>
+        </div>
+    );
+}
+
+
+/*
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -51,8 +66,4 @@ export default function Home() {
             Read our docs
           </a>
         </div>
-      </main>
-      <Footer/>
-    </div>
-  );
-}
+ */
