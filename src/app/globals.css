@@ -31,11 +31,9 @@ body {
   .dark .motion-background {
     background-image: linear-gradient(to right,
       theme('colors.slate.950'),
-      theme('colors.slate.900'),
       theme('colors.violet.950'),
       theme('colors.blue.950'),
       theme('colors.slate.950'),
-      theme('colors.slate.900'),
       theme('colors.violet.950'),
       theme('colors.blue.950'),
       theme('colors.slate.950')
