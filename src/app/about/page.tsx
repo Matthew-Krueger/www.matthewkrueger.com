@@ -43,6 +43,24 @@ const dependencies: Dependency[] = [
         license: <span>MIT</span>
     },
     {
+        name: <span>@tanstack/react-table</span>,
+        url: "https://www.npmjs.com/package/@tanstack/react-table",
+        version: <span>^8.21.2</span>,
+        license: <span>MIT</span>
+    },
+    {
+        name: <span>@types/papaparse</span>,
+        url: "https://www.npmjs.com/package/@types/papaparse",
+        version: <span>^5.3.15</span>,
+        license: <span>MIT</span>
+    },
+    {
+        name: <span>@vercel/speed-insights</span>,
+        url: "https://www.npmjs.com/package/@vercel/speed-insights",
+        version: <span>^1.2.0</span>,
+        license: <span>MIT</span>
+    },
+    {
         name: <span>class-variance-authority</span>,
         url: "https://www.npmjs.com/package/class-variance-authority",
         version: <span>^0.7.1</span>,
@@ -73,6 +91,12 @@ const dependencies: Dependency[] = [
         license: <span>MIT</span>
     },
     {
+        name: <span>papaparse</span>,
+        url: "https://www.npmjs.com/package/papaparse",
+        version: <span>^5.5.2</span>,
+        license: <span>MIT</span>
+    },
+    {
         name: <span>react</span>,
         url: "https://www.npmjs.com/package/react",
         version: <span>^19.0.0</span>,
@@ -87,7 +111,13 @@ const dependencies: Dependency[] = [
     {
         name: <span>react-icons</span>,
         url: "https://www.npmjs.com/package/react-icons",
-        version: <span>^5.4.0</span>,
+        version: <span>^5.5.0</span>,
+        license: <span>MIT</span>
+    },
+    {
+        name: <span>recharts</span>,
+        url: "https://www.npmjs.com/package/recharts",
+        version: <span>^2.15.1</span>,
         license: <span>MIT</span>
     },
     {
@@ -114,31 +144,31 @@ const devDependencies: Dependency[] = [
     {
         name: <span>@eslint/eslintrc</span>,
         url: "https://www.npmjs.com/package/@eslint/eslintrc",
-        version: <span>^3</span>,
+        version: <span>^3.2.0</span>,
         license: <span>MIT</span>
     },
     {
         name: <span>@types/node</span>,
         url: "https://www.npmjs.com/package/@types/node",
-        version: <span>^20</span>,
+        version: <span>^20.17.19</span>,
         license: <span>MIT</span>
     },
     {
         name: <span>@types/react</span>,
         url: "https://www.npmjs.com/package/@types/react",
-        version: <span>^19</span>,
+        version: <span>^19.0.10</span>,
         license: <span>MIT</span>
     },
     {
         name: <span>@types/react-dom</span>,
         url: "https://www.npmjs.com/package/@types/react-dom",
-        version: <span>^19</span>,
+        version: <span>^19.0.4</span>,
         license: <span>MIT</span>
     },
     {
         name: <span>eslint</span>,
         url: "https://www.npmjs.com/package/eslint",
-        version: <span>^9</span>,
+        version: <span>^9.20.1</span>,
         license: <span>MIT</span>
     },
     {
@@ -150,7 +180,7 @@ const devDependencies: Dependency[] = [
     {
         name: <span>postcss</span>,
         url: "https://www.npmjs.com/package/postcss",
-        version: <span>^8</span>,
+        version: <span>^8.5.3</span>,
         license: <span>MIT</span>
     },
     {
@@ -162,7 +192,7 @@ const devDependencies: Dependency[] = [
     {
         name: <span>typescript</span>,
         url: "https://www.npmjs.com/package/typescript",
-        version: <span>^5</span>,
+        version: <span>^5.7.3</span>,
         license: <span>Apache 2.0</span>
     }
 ];
