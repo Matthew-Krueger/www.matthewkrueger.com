@@ -276,10 +276,22 @@ function transposeMatrix(table: string[][]): string[][] {
     return transposed;
 }
 
-// Function to process the data and generate graph data
-// Function to process the data
+/**
+ * Analyzes the provided data and generates structured datasets for graphing.
+ *
+ * @param {WorkerMessageDataAnalyse['data']} input - The input data containing the matrix,
+ *                                                    unique categories, and unique tasks.
+ * @returns {WorkerMessageDataAnalysed} - The structured output data for various chart types.
+ *
+ * This function performs the following:
+ * - Calculates overall averages for each task across all categories.
+ * - Groups data into categories and calculates their specific averages.
+ * - Generates bar chart data for overall task importance and category-specific importance.
+ * - Calculates task importance distribution and generates pie chart datasets.
+ * - Prepares color-coded datasets based on the importance levels.
+ */
 function analyseData(input: WorkerMessageDataAnalyse['data']): WorkerMessageDataAnalysed {
-    const { matrix, uniqueCategories, uniqueTasks } = input;
+    const {matrix, uniqueCategories, uniqueTasks} = input;
 
     // Calculate averages for each task
     const taskAverages: { [task: string]: number[] } = {};
@@ -324,9 +336,9 @@ function analyseData(input: WorkerMessageDataAnalyse['data']): WorkerMessageData
         categoryAverages[cat] = taskSums.map((sum, idx) => sum / taskCounts[idx]);
     });
 
-    // Calculate importance distributions
+    // Helper function to calculate importance distributions
     const getDistribution = (averages: number[]) => {
-        const distribution = { high: 0, medium: 0, low: 0 };
+        const distribution = {high: 0, medium: 0, low: 0};
         averages.forEach(avg => {
             if (avg <= 5) distribution.high++;
             else if (avg >= 9) distribution.low++;
@@ -335,7 +347,7 @@ function analyseData(input: WorkerMessageDataAnalyse['data']): WorkerMessageData
         return distribution;
     };
 
-    // Color schemes (using internationally recognized color coding)
+    // Color schemes for categorization and importance
     const importanceColors = {
         high: '#4CAF50',   // Green for high importance
         medium: '#FFC107', // Yellow for medium
@@ -349,6 +361,7 @@ function analyseData(input: WorkerMessageDataAnalyse['data']): WorkerMessageData
         JR: '#3F51B5'  // Indigo for Junior
     };
 
+    // Return the structured graph data
     return {
         type: 'dataAnalysed',
         data: {

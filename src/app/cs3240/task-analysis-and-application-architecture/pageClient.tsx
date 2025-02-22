@@ -14,25 +14,27 @@ export default function TaskAnalysisAndApplicationArchitecture_Client() {
     const {isComplete, error, matrix, parseCsv, setIsComplete, uniqueTasks, uniqueCategories, analyseMatrix, analysedData} = useCsvWorker();
 
     return (<>
-            {isComplete === 'notStarted' && <StaticSection className={"w-[90%]"}>
-                <p>Please upload a CSV file to get started.</p>
-                <CsvUploader onFileSelectAction={parseCsv}/>
-            </StaticSection>}
+            {isComplete === 'notStarted' &&
+                <StaticSection className={"w-[90%] flex flex-col items-center justify-center text-center"}>
+                    <h1 className="text-4xl font-bold mb-4 text-center">Please Upload a CSV file to get started</h1>
+                    <CsvUploader onFileSelectAction={parseCsv}/>
+                </StaticSection>}
 
             {isComplete === 'error' && <StaticSection className={"w-[90%]"}>
-                <p>An error Occurred: {error}</p>
+                <h1 className="text-4xl font-bold mb-4 text-center">An Error Occurred: {error}</h1>
                 <CsvUploader onFileSelectAction={parseCsv}/>
             </StaticSection>}
 
             {isComplete === 'loading' && <StaticSection className={"w-[90%]"}>
-                <p>Processing your file, please wait...</p>
+                <h1 className="text-4xl font-bold mb-4 text-center">Processing your file.......</h1>
             </StaticSection>}
 
             {isComplete === 'loaded' && <StaticSection className={"w-[90%]"}>
 
-                <p>CSV file uploaded successfully!</p>
-                <Button className={"m-5"} onClick={analyseMatrix}>Continue to Analysis</Button>
-                <Button onClick={() => setIsComplete('notStarted')} className={"m-5"}>Clear and Upload Again</Button>
+                <h1 className="text-4xl font-bold mb-4 text-center">CSV Uploaded Successfully</h1>
+                <Button className={"m-5 mx-auto block"} onClick={analyseMatrix}>Continue to Analysis</Button>
+                <Button onClick={() => setIsComplete('notStarted')} className={"m-5 mx-auto block"}>Clear and Upload
+                    Again</Button>
                 <section className="p-6 mt-5 bg-gray-400 dark:bg-gray-600 rounded-lg shadow-lg">
                     {
                         uniqueTasks.length > 0 &&
@@ -52,10 +54,13 @@ export default function TaskAnalysisAndApplicationArchitecture_Client() {
             </StaticSection>}
 
             {isComplete === 'analysing' && <StaticSection className={"w-[90%]"}>
-                <p>Processing...</p>
+                <h1 className="text-4xl font-bold mb-4 text-center">Analysing......</h1>
             </StaticSection>}
 
             {isComplete === 'complete' && <StaticSection className={"w-[90%]"}>
+                <h1 className="text-4xl font-bold mb-4 text-center">Analysis Complete</h1>
+                <Button onClick={() => setIsComplete('notStarted')} className={"m-5 mx-auto block"}>Clear and Upload
+                    Again</Button>
                 {analysedData && <VisualizationsComponent analysedData={analysedData} />}
             </StaticSection>}
         </>
