@@ -49,16 +49,10 @@ const dependencies: Dependency[] = [
         license: <span>MIT</span>
     },
     {
-        name: <span>@types/papaparse</span>,
-        url: "https://www.npmjs.com/package/@types/papaparse",
-        version: <span>^5.3.15</span>,
-        license: <span>MIT</span>
-    },
-    {
         name: <span>@vercel/speed-insights</span>,
         url: "https://www.npmjs.com/package/@vercel/speed-insights",
         version: <span>^1.2.0</span>,
-        license: <span>MIT</span>
+        license: <span>Apache 2.0</span>
     },
     {
         name: <span>class-variance-authority</span>,
@@ -151,6 +145,12 @@ const devDependencies: Dependency[] = [
         name: <span>@types/node</span>,
         url: "https://www.npmjs.com/package/@types/node",
         version: <span>^20.17.19</span>,
+        license: <span>MIT</span>
+    },
+    {
+        name: <span>@types/papaparse</span>,
+        url: "https://www.npmjs.com/package/@types/papaparse",
+        version: <span>^5.3.15</span>,
         license: <span>MIT</span>
     },
     {
