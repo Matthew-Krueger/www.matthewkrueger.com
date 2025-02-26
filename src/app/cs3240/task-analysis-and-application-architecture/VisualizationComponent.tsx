@@ -7,6 +7,9 @@ interface VisualizationsProps {
 }
 
 export function VisualizationsComponent({analysedData}: VisualizationsProps) {
+
+    console.log(JSON.stringify(analysedData));
+
     const containerStyles = cn(
         "flex flex-col items-center justify-center p-6 gap-8"
     );
