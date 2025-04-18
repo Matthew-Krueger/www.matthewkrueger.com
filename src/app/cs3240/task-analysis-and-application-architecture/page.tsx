@@ -1,16 +1,14 @@
-import { Footer } from "@/components/Footer";
-import Navbar from "@/components/NavigationBar";
+
 import StaticSection from "@/components/StaticSection";
 import React from "react";
 import TaskAnalysisAndApplicationArchitecture_Client from "@/app/cs3240/task-analysis-and-application-architecture/pageClient";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import PageBase from "@/components/PageBase";
 
 export default function TaskAnalysisAndApplicationArchitecture() {
     return (
-        <div className="motion-background flex flex-col min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] text-slate-950 dark:text-slate-50">
-            <Navbar />
-            <main className="flex-grow flex flex-col items-center justify-center mt-12">
+        <>
                 <StaticSection>
                     <h1 className="text-4xl font-bold mb-4 text-center">CS 3240 - Usability Engineering</h1>
                     <h2 className="text-2xl font-bold text-center">Task Analysis & Application Architecture Demo</h2>
@@ -53,8 +51,6 @@ export default function TaskAnalysisAndApplicationArchitecture() {
                 </StaticSection>
 
                 <TaskAnalysisAndApplicationArchitecture_Client />
-            </main>
-            <Footer />
-        </div>
+        </>
     );
 }

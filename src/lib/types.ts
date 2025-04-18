@@ -13,3 +13,19 @@ export type Dependency = {
     version?:React.ReactElement,
     license?: React.ReactElement
 };
+
+export interface Frontmatter {
+    title: string;
+    date: string | Date;
+    author: string;
+}
+
+export interface Post {
+    slug: string;
+    frontmatter: Frontmatter;
+}
+
+export interface PostProps {
+    frontmatter: Frontmatter;
+    content: string;
+}

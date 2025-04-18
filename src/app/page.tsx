@@ -1,26 +1,19 @@
-import {Footer} from "@/components/Footer";
-import Navbar from "@/components/NavigationBar";
 import Link from "next/link";
 import {Button} from "@/components/ui/button";
 
 export default function Home() {
-    return (
-        <div className="motion-background flex flex-col min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] text-slate-950 dark:text-slate-50">
-            <Navbar/>
-            <main className="flex-grow flex flex-col items-center justify-center mt-12">
-                <h1 className="text-4xl font-bold mb-4 text-center">Matthew Krueger</h1>
-                <div className="flex flex-col sm:flex-row items-center">
-                    <h3 className="text-lg text-center sm:text-left">Emerging Computer Science Professional</h3>
-                    <span className="hidden sm:inline-block mx-2">|</span>
-                    <h3 className="text-lg text-center sm:text-left">React & Typescript Dev</h3>
-                    <span className="hidden sm:inline-block mx-2">|</span>
-                    <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
-                </div>
-                <Link href="/about" className="mt-6"><Button size="lg">About me!</Button></Link>
-            </main>
-            <Footer/>
-        </div>
-    );
+    return <>
+            <h1 className="text-4xl font-bold mb-4 text-center">Matthew Krueger</h1>
+            <div className="flex flex-col sm:flex-row items-center">
+                <h3 className="text-lg text-center sm:text-left">Emerging Computer Science Professional</h3>
+                <span className="hidden sm:inline-block mx-2">|</span>
+                <h3 className="text-lg text-center sm:text-left">React & Typescript Dev</h3>
+                <span className="hidden sm:inline-block mx-2">|</span>
+                <h3 className="text-lg text-center sm:text-left">Entrepreneur</h3>
+            </div>
+            <Link href="/about" className="mt-6"><Button size="lg">About me!</Button></Link>
+
+    </>;
 }
 
 

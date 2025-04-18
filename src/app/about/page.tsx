@@ -4,6 +4,7 @@ import {Footer} from "@/components/Footer";
 import {Dependency} from "@/lib/types";
 import DependencyItem from "@/components/DependencyItem";
 import StaticSection from "@/components/StaticSection";
+import PageBase from "@/components/PageBase";
 
 const hosting: Dependency[] = [
     {
@@ -199,10 +200,7 @@ const devDependencies: Dependency[] = [
 
 const About = () => {
     return (
-        <div className="motion-background flex flex-col min-h-screen p-8 sm:p-20 font-[family-name:var(--font-geist-sans)] text-slate-950 dark:text-slate-50">
-            <Navbar/>
-            <main className="flex-grow flex flex-col items-center justify-center mt-12">
-
+        <>
                 <StaticSection>
                     <h1 className="text-4xl font-bold mb-4 text-center">About Me</h1>
                     <div className="flex flex-col sm:flex-row items-center">
@@ -224,9 +222,8 @@ const About = () => {
                     <h2 className="text-2xl font-bold mt-8 text-center">Development Dependencies</h2>
                         <DependencyList dependencies={devDependencies}/>
                 </StaticSection>
-            </main>
-            <Footer/>
-        </div>
+
+        </>
     );
 };
 

@@ -1,13 +1,9 @@
 import React, {useMemo} from "react";
 import Link from "next/link";
-import { NavItem } from "@/lib/types";
 import {cn} from "@/lib/utils";
 import {usePathname} from "next/navigation";
 
-const navItems: NavItem[] = [
-    {label: <>Home</>, link: '/', key: "DefaultHomePageLink"},
-    {label: <>About</>, link: '/about', key: "DefaultAboutPageLink"},
-];
+import navItems from "@/lib/navbaritems";
 
 function standardizeUrl(url: string): string {
     // Remove trailing slashes
