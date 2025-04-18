@@ -16,8 +16,12 @@ export type Dependency = {
 
 export interface Frontmatter {
     title: string;
+    description?: string;
+    slug?: string;
     date: string | Date;
-    author: string;
+    author?: string;
+    categories?: string[];
+    weight?: number;
 }
 
 export interface Post {
