@@ -4,7 +4,6 @@ import React from "react";
 import TaskAnalysisAndApplicationArchitecture_Client from "@/app/cs3240/task-analysis-and-application-architecture/pageClient";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import PageBase from "@/components/PageBase";
 
 export default function TaskAnalysisAndApplicationArchitecture() {
     return (
