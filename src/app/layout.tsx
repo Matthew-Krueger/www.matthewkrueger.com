@@ -34,7 +34,7 @@ export default function RootLayout({
       <SpeedInsights />
       <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
       >

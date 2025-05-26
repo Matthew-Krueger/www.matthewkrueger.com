@@ -43,15 +43,14 @@ export default async function Blog() {
             </StaticSection>
             <StaticSection>
                 {posts.map((post) => (
+                    <Link href={`/blog/${post.slug}`} key={post.slug}>
                     <Card
                         key={post.slug}
                         className="shadow-md hover:shadow-lg transition-shadow duration-200 mb-6"
                     >
                         <CardHeader>
                             <CardTitle className="text-xl font-semibold">
-                                <Link href={`/blog/${post.slug}`} className="hover:underline">
                                     {post.frontmatter.title}
-                                </Link>
                             </CardTitle>
                         </CardHeader>
                         <CardContent>
@@ -60,7 +59,7 @@ export default async function Blog() {
                                     {post.frontmatter.description}
                                 </p>
                             )}
-                            <div className="flex flex-wrap gap-2 mb-2">
+                            <div className="flex flex-wrap gap-2 mb-2 justify-center">
                                 {post.frontmatter.categories?.map((category) => (
                                     <Badge key={category} variant="secondary">
                                         {category}
@@ -79,6 +78,7 @@ export default async function Blog() {
                             </p>
                         </CardContent>
                     </Card>
+                    </Link>
                 ))}
             </StaticSection>
         </div>

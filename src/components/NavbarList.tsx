@@ -42,7 +42,7 @@ const NavbarList = React.memo(({ isMobile, open }: { isMobile: boolean; open?: b
                                 : "rounded-3xl m-2 bg-slate-100 dark:bg-slate-700 text-slate-900 dark:text-slate-100",
 
                             // State-specific styles
-                            activeLink && "bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900"
+                            activeLink && "bg-slate-900 dark:bg-slate-100 text-slate-100 dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-300 hover:text-slate-100 dark:hover:text-slate-900"
                         )}
                     >
                         <button className="px-3 py-2 rounded-md text-sm font-medium">
