@@ -13,12 +13,7 @@ const hosting: Dependency[] = [
         name: <span>ProtonMail</span>,
         url: "https://proton.me/mail",
         heading: <span>Secure Email by</span>,
-    },
-    {
-        name: <span>Bun.sh</span>,
-        url: "https://bun.sh",
-        heading: <span>Proudly Served by<br />&<br />Developed with</span>,
-    },
+    }
 ];
 
 const dependencies: Dependency[] = [

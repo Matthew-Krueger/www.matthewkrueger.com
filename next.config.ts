@@ -4,6 +4,7 @@ import withMDX from '@next/mdx';
 const nextConfig: NextConfig = {
     pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
     // Other config options here
+    output: "standalone"
 };
 
 export default withMDX({
