@@ -18,9 +18,15 @@ function standardizeUrl(url: string): string {
     return url;
 }
 
-const NavbarList = React.memo(({ isMobile, open }: { isMobile: boolean; open?: boolean }) => {
+const NavbarList = React.memo(({ isMobile, open, onLinkClick }: { isMobile: boolean; open?: boolean, onLinkClick: () => void }) => {
     const pathname = usePathname(); // Get the current pathname
     const standardizedPathName = useMemo(() => standardizeUrl(pathname), [pathname]);
+
+    const handleLinkClick = () => {
+        if(isMobile && open){
+            onLinkClick();
+        }
+    }
 
     return (
         <ul className={cn(
@@ -30,7 +36,7 @@ const NavbarList = React.memo(({ isMobile, open }: { isMobile: boolean; open?: b
             {navItems.map(item => {
                 const activeLink = standardizeUrl(item.link) === standardizedPathName;
 
-                return <Link href={item.link} key={item.key}>
+                return <Link href={item.link} key={item.key} onClick={handleLinkClick}>
                     <li
                         className={cn(
                             // Common styles for all states

@@ -136,7 +136,7 @@ While that's a bit extreme, similar concepts are still good to follow,
 especially offsite backups. You don't want to lose your key. Ever.
 
 7. Lastly, GPG will generate our key and give us some information. The line
-pub contains a number, `64CFA56B02F7B2E484B09BE29F9F051089326E60`. That is
+pub contains a number, `64CFA56B[...]`. That is
 our key ID. This is how we identify keys. We're now ready to generate some sub
 keys that we can actually use.
 ```
@@ -183,7 +183,7 @@ sub   rsa4096 2024-01-05 [A] [expires: 2027-01-04]
 
 1. First, we'll get our list of keys again. Use `gpg --list-keys` for this.
 Since we're working on our example key, I'll use my first selection,
-`64CFA56B02F7B2E484B09BE29F9F051089326E60`. We can also use the last 16
+`64CFA56B[...]`. We can also use the last 16
 digits of this key for short this is called the keyID. (There's also a short
 keyID that's the last 8 digits)
 

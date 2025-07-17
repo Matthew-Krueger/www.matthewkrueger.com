@@ -66,8 +66,13 @@ export default async function Post({ params }: { params: Promise<Params> }) {
           {formattedDate}
           {frontmatter.author && ` by ${frontmatter.author}`}
         </p>
+          <p className="italic font-light text-center align-middle justify-center text-xs w-1/2 mx-auto">
+              While accessible on all devices,
+              content such as complex code and visual diagrams in this
+              article may be more comfortably viewed on a larger screen.
+          </p>
       </StaticSection>
-      <StaticSection>
+      <StaticSection className="w-11/12">
         <div className="mdx-content">
           <MDXRemote
             source={source}
