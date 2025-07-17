@@ -16,10 +16,10 @@ const Navbar: React.FC = () => {
         )}>
             <div className="flex justify-between items-center w-full h-16">
                 <h1 className="text-2xl md:text-3xl font-bold px-5">Matthew Krueger</h1>
-                <NavbarList isMobile={false} />
+                <NavbarList isMobile={false} onLinkClick={()=>{}}/>
                 <HamburgerButton onClick={() => setHamburgerOpen(!hamburgerOpen)} isOpen={hamburgerOpen} />
             </div>
-            <NavbarList isMobile={true} open={hamburgerOpen} />
+            <NavbarList isMobile={true} open={hamburgerOpen} onLinkClick={()=>{setHamburgerOpen(false)}} />
         </nav>
         <div className="h-12"></div>
     </>);
