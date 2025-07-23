@@ -74,11 +74,11 @@ body {
 }
 
 .mdx-content code {
-    @apply bg-gray-100 text-sm px-1 py-0.5 rounded font-mono;
+    @apply text-sm px-1 py-0.5 rounded font-mono;
 }
 
 .mdx-content pre {
-    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+    @apply p-4 rounded-lg overflow-x-auto mb-6;
 }
 
 .mdx-content ul {
