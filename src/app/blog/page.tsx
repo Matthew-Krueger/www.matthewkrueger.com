@@ -72,6 +72,7 @@ export default async function Blog() {
                                         year: 'numeric',
                                         month: 'numeric',
                                         day: 'numeric',
+                                        timeZone: 'UTC'
                                     })
                                     : post.frontmatter.date}
                                 {post.frontmatter.author && ` by ${post.frontmatter.author}`}
