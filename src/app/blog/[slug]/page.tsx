@@ -10,6 +10,8 @@ import StaticSection from '@/components/StaticSection';
 import {Frontmatter, PostProps} from '@/lib/types';
 import { Code, Pre } from '@/components/mdx/Code';
 import remarkGfm from "remark-gfm";
+import React from "react";
+import {cn} from "@/lib/utils";
 
 interface Params {
     slug: string;
@@ -86,6 +88,20 @@ export default async function Post({ params }: { params: Promise<Params> }) {
                                     <table {...props} />
                                 </div>
                             ),
+                            h3: (props: {className: string, children: React.ReactElement}) => (
+                                <h3
+                                    className={cn(props.className, `text-xl`)}
+                                >
+                                    <i>{props.children}</i>
+                                </h3>
+                            ),
+                            h4: (props: {className: string, children: React.ReactElement}) => (
+                                <h4
+                                    className={cn(props.className, `text-lg`)}
+                                >
+                                    <i>{props.children}</i>
+                                </h4>
+                            )
                         }}
                         options={{
                             mdxOptions: {
