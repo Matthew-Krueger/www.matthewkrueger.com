@@ -9,6 +9,7 @@ import { Badge } from '@/components/ui/badge';
 import StaticSection from '@/components/StaticSection';
 import {Frontmatter, PostProps} from '@/lib/types';
 import { Code, Pre } from '@/components/mdx/Code';
+import remarkGfm from "remark-gfm";
 
 interface Params {
     slug: string;
@@ -80,6 +81,16 @@ export default async function Post({ params }: { params: Promise<Params> }) {
                         components={{
                             pre: Pre,
                             code: Code,
+                            table: (props) => (
+                                <div className="overflow-x-auto">
+                                    <table {...props} />
+                                </div>
+                            ),
+                        }}
+                        options={{
+                            mdxOptions: {
+                                remarkPlugins: [remarkGfm]
+                            },
                         }}
                     />
                 </div>
