@@ -301,6 +301,8 @@ Running the serial `p=1` vs parallel `p=10` on my local machine with reduced par
 `--max-iterations 100000 --num-samples 100000 --dimensions 3 --clusters 10 --spread 3.5 --trials 1`
 yelled these results for `p=1` and `p=10` with the DEBUG_FLAG overridden in main.cpp:
 
+NOTE: I ran in 10 core mode to match OSC. Due to P-Core eviction on my MacBook, the speedup is not stable above seven cores.
+
 ```terminaloutput
 mckrueg@Matthews-MacBook-Pro cmake-build-debug % mpiexec -n 1 ./kmeans_mpi --max-iterations 100000 --num-samples 100000 --dimensions 3 --clusters 10 --spread 3.5 --trials 1
 
