@@ -19,13 +19,13 @@ The repository for this project can be found [here](https://github.com/Matthew-K
 
 ## 1. Summary
 This report describes the implementation and parallelization of K-Means Clustering using MPI, vs. serial execution.
-I found that the parallel implementation had a near-linear speedup over the serial implementation, showing optimal
-parallelism and optimal communication.
+I found that the parallel implementation had a near-linear speedup over the serial implementation, showing,
+at this problem size, optimal parallelism and optimal communication.
 This shows that, at least for the problem sizes presented,
 the parallel implementation as written here is a viable algorithm for parallel execution.
 
 ### 1.1 Algorithm Overview
-K-Means Clustering is a popular clustering algorithm that is widely used in machine learning.
+K-Means Clustering is a popular clustering algorithm widely used in machine learning.
 It is a method of unsupervised learning that aims to partition a set of data into a number of clusters,
 where each data point is assigned to the cluster with the closest average (mean).
 In effect, this algorithm finds groups of data points that are similar to each other.
@@ -43,7 +43,7 @@ demarcated by a specified tolerance (epsilon).
 
 K-Means clustering (Lloyd's algorithm) was chosen for this assignment due to its popularity in big data analytics,
 as well as its simplicity and ease of implementation.
-K-Means can be written trivially in both serial and parallel form, both of which were implemented for comparison.
+K-Means can be written trivially in both serial and parallel forms, both of which were implemented for comparison.
 Both the serial and parallel implementations are written in C++23 (preview) and validated to work with GCC 13.2.0.
 However, you may have better luck on a more modern version of the compiler with full support for C++23.
 
@@ -69,7 +69,7 @@ It also allows for Link Time Optimization (LTO) to optimize further in the final
 In doing this, the program execution time can be reduced significantly by using the full power of the CPU.
 On my M1 Pro Mac, this uses NEON instructions, and on the OSC cluster, it uses AVX512 instructions.
 
-Importantly, these optimizations require the value to be move-constructable.
+Importantly, these optimizations (generally) require the value to be move-constructable.
 This uses the Named Return Value Optimization (NRVO) as well as Return Value Optimization (RVO)
  to avoid unnecessary copies of the data.
 By default, the compiler will copy the data if it is not move-constructable,
@@ -80,6 +80,8 @@ In the end, it can be optimized away.
 It is then a hint (or more accurately an instruction) to the compiler to *not* copy the data.
 I relied on explicit copies of inner data, though with more care it may be possible to optimize the semantics
 within the constraints of C++ to avoid unnecessary copies, while retaining semantic ease of use.
+
+NOTE: These claims are based on C++23 features as stated, and have not been validated against earlier versions of C++.
 
 Boost was chosen for this project for its ease of use and integration with both CMake and MPI.
 Boost.MPI was used for the parallel implementation, and Boost.Serialization was used to provide serialization
