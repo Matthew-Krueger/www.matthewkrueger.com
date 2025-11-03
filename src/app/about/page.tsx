@@ -9,11 +9,6 @@ const hosting: Dependency[] = [
         url: "https://vercel.com",
         heading: <span>Hosted by</span>,
     },
-    {
-        name: <span>ProtonMail</span>,
-        url: "https://proton.me/mail",
-        heading: <span>Secure Email by</span>,
-    }
 ];
 
 const dependencies: Dependency[] = [
@@ -26,7 +21,7 @@ const dependencies: Dependency[] = [
     {
         name: <span>@next/mdx</span>,
         url: "https://www.npmjs.com/package/@next/mdx",
-        version: <span>^15.3.2</span>,
+        version: <span>^15.4.7</span>,
         license: <span>MIT</span>,
     },
     {
@@ -86,7 +81,13 @@ const dependencies: Dependency[] = [
     {
         name: <span>next</span>,
         url: "https://www.npmjs.com/package/next",
-        version: <span>15.3.2</span>,
+        version: <span>15.4.7</span>,
+        license: <span>MIT</span>,
+    },
+    {
+        name: <span>next-mdx-remote</span>,
+        url: "https://www.npmjs.com/package/next-mdx-remote",
+        version: <span>^5.0.0</span>,
         license: <span>MIT</span>,
     },
     {
@@ -132,15 +133,21 @@ const dependencies: Dependency[] = [
         license: <span>MIT</span>,
     },
     {
-        name: <span>remark-mdx</span>,
-        url: "https://www.npmjs.com/package/remark-mdx",
-        version: <span>^3.1.0</span>,
+        name: <span>remark-gfm</span>,
+        url: "https://www.npmjs.com/package/remark-gfm",
+        version: <span>^4.0.1</span>,
         license: <span>MIT</span>,
     },
     {
         name: <span>remark-html</span>,
         url: "https://www.npmjs.com/package/remark-html",
         version: <span>^16.0.1</span>,
+        license: <span>MIT</span>,
+    },
+    {
+        name: <span>remark-mdx</span>,
+        url: "https://www.npmjs.com/package/remark-mdx",
+        version: <span>^3.1.0</span>,
         license: <span>MIT</span>,
     },
     {
